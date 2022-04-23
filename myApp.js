@@ -63,6 +63,7 @@ app.use(helmet.hsts({
   force: true
 }));
 app.use(helmet.dnsPrefetchControl());
+app.use(helmet.noCache());
 
 app.use('/_api', api);
 app.get("/", function (request, response) {
