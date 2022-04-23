@@ -55,6 +55,7 @@ app.disable('strict-transport-security');
 // helmet middleware
 app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({action: 'deny'}));
+app.use(helmet.xssFilter());
 
 app.use('/_api', api);
 app.get("/", function (request, response) {
